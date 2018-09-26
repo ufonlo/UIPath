@@ -1,0 +1,185 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Calculator_Automation" mva:VisualBasic.Settings="{x:Null}"
+          sap2010:WorkflowViewState.IdRef="Calculator_Automation_1"
+          xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+          xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+          xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+          xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+          xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+          xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+          xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+          xmlns:ui="http://schemas.uipath.com/workflow/activities"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <TextExpression.NamespacesForImplementation>
+        <sco:Collection x:TypeArguments="x:String">
+            <x:String>System.Activities.XamlIntegration</x:String>
+            <x:String>System.Activities.Validation</x:String>
+            <x:String>System.Activities</x:String>
+            <x:String>System.Activities.Statements</x:String>
+            <x:String>System.Activities.Expressions</x:String>
+            <x:String>Microsoft.VisualBasic</x:String>
+            <x:String>Microsoft.VisualBasic.Activities</x:String>
+            <x:String>System</x:String>
+            <x:String>System.Collections.Generic</x:String>
+            <x:String>System.Data</x:String>
+            <x:String>System.Diagnostics</x:String>
+            <x:String>System.IO</x:String>
+            <x:String>System.Linq</x:String>
+            <x:String>System.Management.Automation</x:String>
+            <x:String>System.Net.Mail</x:String>
+            <x:String>System.Xml</x:String>
+            <x:String>System.Xml.Linq</x:String>
+            <x:String>System.Windows.Markup</x:String>
+            <x:String>UiPath.Framework.Activities</x:String>
+            <x:String>UiPath.Core</x:String>
+        </sco:Collection>
+    </TextExpression.NamespacesForImplementation>
+    <TextExpression.ReferencesForImplementation>
+        <sco:Collection x:TypeArguments="AssemblyReference">
+            <AssemblyReference>System.Activities</AssemblyReference>
+            <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+            <AssemblyReference>mscorlib</AssemblyReference>
+            <AssemblyReference>System.Data</AssemblyReference>
+            <AssemblyReference>System</AssemblyReference>
+            <AssemblyReference>System.Core</AssemblyReference>
+            <AssemblyReference>System.Management.Automation</AssemblyReference>
+            <AssemblyReference>System.Xml</AssemblyReference>
+            <AssemblyReference>System.Xml.Linq</AssemblyReference>
+            <AssemblyReference>System.Xaml</AssemblyReference>
+            <AssemblyReference>WindowsBase</AssemblyReference>
+            <AssemblyReference>PresentationCore</AssemblyReference>
+            <AssemblyReference>PresentationFramework</AssemblyReference>
+            <AssemblyReference>System.ServiceModel</AssemblyReference>
+            <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+            <AssemblyReference>UiPath.Framework.Activities</AssemblyReference>
+            <AssemblyReference>UiPath.Core</AssemblyReference>
+        </sco:Collection>
+    </TextExpression.ReferencesForImplementation>
+    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+        <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="winFolder" />
+            <Variable x:TypeArguments="ui:GenericValue" Name="resultValue" />
+        </Sequence.Variables>
+        <ui:GetEnvironmentFolder DisplayName="Get environment folder" FolderPath="[winFolder]"
+                                 sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="Windows" />
+        <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}"
+                            WorkingDirectory="{x:Null}" DisplayName="Open application 'Calculator' "
+                            FileName="[winFolder+ &quot;\system32\calc.exe&quot;]"
+                            sap2010:WorkflowViewState.IdRef="OpenApplication_1"
+                            InformativeScreenshot="c5044eff26a795e87825876035fe87cf"
+                            Selector="&lt;wnd app='calc.exe' cls='CalcFrame' title='Calculator' /&gt;">
+            <ui:OpenApplication.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="300"
+                                  DisplayName="Click '4' button" sap2010:WorkflowViewState.IdRef="Click_13"
+                                  KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False"
+                                  SimulateClick="False">
+                            <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="15" OffsetY="13" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}"
+                                           InformativeScreenshot="9a1e51762dc1194aee166822ed7d4f17"
+                                           Selector="&lt;ctrl name='4' role='push button'/&gt;"
+                                           WaitForReady="INTERACTIVE" />
+                            </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="300"
+                                  DisplayName="Click 'Add' button" sap2010:WorkflowViewState.IdRef="Click_14"
+                                  KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False"
+                                  SimulateClick="False">
+                            <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="19" OffsetY="21" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}"
+                                           InformativeScreenshot="c56c8b39c6b7f58da2de4b702e810fb1"
+                                           Selector="&lt;ctrl name='Add' role='push button'/&gt;"
+                                           WaitForReady="INTERACTIVE" />
+                            </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="300"
+                                  DisplayName="Click '5' button" sap2010:WorkflowViewState.IdRef="Click_15"
+                                  KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False"
+                                  SimulateClick="False">
+                            <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="21" OffsetY="13" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}"
+                                           InformativeScreenshot="12b2d99f7c515edb65d7cbda8495053e"
+                                           Selector="&lt;ctrl name='5' role='push button'/&gt;"
+                                           WaitForReady="INTERACTIVE" />
+                            </ui:Click.Target>
+                        </ui:Click>
+                        <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="300"
+                                  DisplayName="Click 'Equals' button" sap2010:WorkflowViewState.IdRef="Click_16"
+                                  KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False"
+                                  SimulateClick="False">
+                            <ui:Click.CursorPosition>
+                                <ui:CursorPosition OffsetX="18" OffsetY="44" Position="TopLeft" />
+                            </ui:Click.CursorPosition>
+                            <ui:Click.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}"
+                                           InformativeScreenshot="3424b9f2b1a01bd489aaaa6ad05442ac"
+                                           Selector="&lt;ctrl name='Equals' role='push button'/&gt;"
+                                           WaitForReady="INTERACTIVE" />
+                            </ui:Click.Target>
+                        </ui:Click>
+                        <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get result value"
+                                     sap2010:WorkflowViewState.IdRef="GetValue_3">
+                            <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}"
+                                           InformativeScreenshot="0442e04e0579a51fdaca35c8fd2bfe46"
+                                           Selector="&lt;ctrl name='Result' role='text'/&gt;"
+                                           WaitForReady="INTERACTIVE" />
+                            </ui:GetValue.Target>
+                            <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[resultValue]</OutArgument>
+                            </ui:GetValue.Value>
+                        </ui:GetValue>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok"
+                                       DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_1"
+                                       Text="[resultValue]" TopMost="True" />
+                        <ui:CloseWindow Selector="{x:Null}" TimeoutMS="{x:Null}" UseWindow="{x:Null}"
+                                        DisplayName="Close 'Calculator' window"
+                                        sap2010:WorkflowViewState.IdRef="CloseWindow_1" WaitForReady="INTERACTIVE" />
+                    </Sequence>
+                </ActivityAction>
+            </ui:OpenApplication.Body>
+        </ui:OpenApplication>
+        <sads:DebugSymbol.Symbol>d05DOlxQcm9qZWN0c1xTdHVkaW9cT3V0cHV0XGJpblxEZWJ1Z1xMaWJyYXJ5XFNhbXBsZXNcQ2FsY3VsYXRvciBBdXRvbWF0aW9uLnhhbWwhOQN1DgIBAT4FPq8BAgEiPwVzGgIBAj5OPlsCASM/1gI/lwMCASE/sgE/3wECAR9FC3AWAgEDRg1NGAIBGk4NVRgCARVWDV0YAgEQXg1lGAIBC2YNbRsCAQduDW7DAQIBBW8Nb9ABAgEES6ABS8sBAgEeRk9GVAIBHUg5SD0CARxILEgwAgEbU6ABU80BAgEZTk9OVAIBGFA5UD0CARdQLFAwAgEWW6ABW8sBAgEUVk9WVAIBE1g5WD0CARJYLFgwAgERY6ABY9ABAgEPXk9eVAIBDmA5YD0CAQ1gLGAwAgEMa0BrTQIBCGigAWjJAQIBCm6iAW6xAQIBBg==</sads:DebugSymbol.Symbol>
+    </Sequence>
+    <sap2010:WorkflowViewState.ViewStateManager>
+        <sap2010:ViewStateManager>
+            <sap2010:ViewStateData Id="GetEnvironmentFolder_1" sap:VirtualizedContainerService.HintSize="414,61" />
+            <sap2010:ViewStateData Id="Click_13" sap:VirtualizedContainerService.HintSize="314,106" />
+            <sap2010:ViewStateData Id="Click_14" sap:VirtualizedContainerService.HintSize="314,106" />
+            <sap2010:ViewStateData Id="Click_15" sap:VirtualizedContainerService.HintSize="314,106" />
+            <sap2010:ViewStateData Id="Click_16" sap:VirtualizedContainerService.HintSize="314,106" />
+            <sap2010:ViewStateData Id="GetValue_3" sap:VirtualizedContainerService.HintSize="314,106" />
+            <sap2010:ViewStateData Id="MessageBox_1" sap:VirtualizedContainerService.HintSize="314,59" />
+            <sap2010:ViewStateData Id="CloseWindow_1" sap:VirtualizedContainerService.HintSize="314,68" />
+            <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="336,1021">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="OpenApplication_1" sap:VirtualizedContainerService.HintSize="414,1167" />
+            <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="436,1392">
+                <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+            </sap2010:ViewStateData>
+            <sap2010:ViewStateData Id="Calculator_Automation_1" sap:VirtualizedContainerService.HintSize="476,1472" />
+        </sap2010:ViewStateManager>
+    </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
